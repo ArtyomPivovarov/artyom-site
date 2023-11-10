@@ -6,5 +6,6 @@ module.exports = {
   "trailingComma": "none",
   "arrowParens": "avoid",
   "singleAttributePerLine": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "ignorePath": ".gitignore"
 }
