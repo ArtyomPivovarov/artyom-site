@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import IconLink from '~/components/ui/IconLink.vue'
 import { socialLinks } from '~/configs/links.config'
+import { getWorkExperience } from '~/utils/date.utils'
 
 const tags = [
   {
@@ -74,6 +75,24 @@ const tags = [
           {{ socialLinks.linkedin.name }}
         </IconLink>
       </div>
+
+      <h2 class="work-experience">
+        <span class="title">
+          {{ $t('Work experience') }}
+        </span>
+
+        <span class="value">
+          <span
+            v-once
+            class="title"
+          >
+            {{ getWorkExperience() }}
+          </span>
+          <span class="years">
+            {{ $t('years') }}
+          </span>
+        </span>
+      </h2>
     </div>
   </section>
 </template>
@@ -96,8 +115,8 @@ const tags = [
 }
 
 .avatar {
-  width: 14rem;
-  height: 14rem;
+  width: 12rem;
+  height: 12rem;
   margin-bottom: 1rem;
 }
 
@@ -117,13 +136,46 @@ const tags = [
   .button {
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--whire-color);
+    color: var(--white-color);
   }
 }
 
 .links {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+}
+
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    background-color: var(--white-color);
+    border-radius: 4rem;
+    aspect-ratio: 1;
+    width: 7.3rem;
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+
+    .title {
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+  }
 }
 </style>
