@@ -9,5 +9,9 @@ export const socialLinks = {
     href: 'https://www.linkedin.com/in/artyom-pivovarov-3ab681250/',
     icon: 'linkedin'
   },
-  instagram: {}
+  gmail: {
+    name: 'Email',
+    href: 'mailto:pivovarov.artyom1@gmail.com',
+    icon: 'envelope'
+  }
 }

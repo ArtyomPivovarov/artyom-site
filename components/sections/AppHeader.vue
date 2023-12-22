@@ -5,6 +5,24 @@ import UILink from '~/components/ui/UILink.vue'
 import { socialLinks } from '~/configs/links.config'
 
 const route = useRoute()
+const links = [
+  {
+    href: '#work-experience',
+    label: 'Work experience'
+  },
+  {
+    href: '#projects',
+    label: 'Projects'
+  },
+  {
+    href: '#about',
+    label: 'About me'
+  },
+  {
+    href: '#contacts',
+    label: 'Contacts'
+  }
+]
 </script>
 
 <template>
@@ -24,18 +42,14 @@ const route = useRoute()
     </a>
     <nav class="menu">
       <ul>
-        <li>
+        <li
+          v-for="link in links"
+          :key="link.href"
+        >
           <UILink
-            to="#about"
-            :current="route.hash === '#about'"
-            >{{ $t('About me') }}</UILink
-          >
-        </li>
-        <li>
-          <UILink
-            to="#projects"
-            :current="route.hash === '#projects'"
-            >{{ $t('Projects') }}</UILink
+            :to="link.href"
+            :current="`#${route.hash}` === link.href"
+            >{{ $t(link.label) }}</UILink
           >
         </li>
       </ul>
@@ -43,17 +57,12 @@ const route = useRoute()
 
     <nav class="icon-links">
       <IconLink
-        :href="socialLinks.github.href"
+        v-for="link in socialLinks"
+        :key="link.href"
+        :href="link.href"
         class="icon-link"
-        :icon="`pi pi-${socialLinks.github.icon}`"
-        :aria-label="socialLinks.github.name"
-      />
-
-      <IconLink
-        :href="socialLinks.linkedin.href"
-        class="icon-link"
-        :icon="`pi pi-${socialLinks.linkedin.icon}`"
-        :aria-label="socialLinks.linkedin.name"
+        :icon="`pi pi-${link.icon}`"
+        :aria-label="link.name"
       />
 
       <LangSelect class="lang-select" />

@@ -63,17 +63,12 @@ const tags = [
 
       <div class="links">
         <IconLink
-          :icon="`pi pi-${socialLinks.github.icon}`"
-          :href="socialLinks.github.href"
+          v-for="link in socialLinks"
+          :key="link.href"
+          :icon="`pi pi-${link.icon}`"
+          :href="link.href"
         >
-          {{ socialLinks.github.name }}
-        </IconLink>
-
-        <IconLink
-          :icon="`pi pi-${socialLinks.linkedin.icon}`"
-          :href="socialLinks.linkedin.href"
-        >
-          {{ socialLinks.linkedin.name }}
+          {{ $t(link.name) }}
         </IconLink>
       </div>
 
@@ -112,7 +107,7 @@ const tags = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .avatar {
@@ -152,7 +147,7 @@ const tags = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 
   .title {
     font-size: 1.5rem;
@@ -165,7 +160,7 @@ const tags = [
     align-items: center;
     justify-content: center;
     margin-top: 1.5rem;
-    padding: 1rem;
+    padding: 1.5rem;
     border: 3px solid var(--white-color);
     border-radius: 5rem;
     aspect-ratio: 1;
