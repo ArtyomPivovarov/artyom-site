@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
-    'nuxt-primevue'
+    'nuxt-primevue',
+    '@element-plus/nuxt'
   ],
   vite: {
     css: {
@@ -22,16 +23,24 @@ export default defineNuxtConfig({
     strict: true
   },
   css: [
-    'primevue/resources/themes/lara-light-teal/theme.css',
+    'primevue/resources/themes/viva-dark/theme.css',
     'primeicons/primeicons.css',
     '@/assets/scss/main.scss'
   ],
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
   pinia: {
     storesDirs: ['./stores/**']
   },
   primevue: {
     components: {
       prefix: 'Prime'
+    },
+    options: {
+      ripple: true
     }
   },
   i18n: {

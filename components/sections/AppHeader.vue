@@ -17,7 +17,7 @@ const route = useRoute()
         size="large"
         shape="circle"
         class="avatar"
-        image="/images/avatar.jpg"
+        icon="pi pi-user"
       />
 
       <span>{{ $t('Artyom Pivovarov') }}</span>

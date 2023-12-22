@@ -8,5 +8,6 @@ export const socialLinks = {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/artyom-pivovarov-3ab681250/',
     icon: 'linkedin'
-  }
+  },
+  instagram: {}
 }

@@ -18,7 +18,9 @@ withDefaults(
     target="_blank"
   >
     <i :class="icon" />
-    <slot />
+    <span class="text">
+      <slot />
+    </span>
   </a>
 </template>
 
@@ -37,9 +39,18 @@ withDefaults(
     transition: color 0.2s ease-in-out;
   }
 
+  .text {
+    border-bottom: 1px solid currentcolor;
+    transition: border-bottom-color 0.2s ease-in-out;
+  }
+
   &:hover {
     i {
       color: var(--primary-color);
+    }
+
+    .text {
+      border-bottom-color: transparent;
     }
   }
 }

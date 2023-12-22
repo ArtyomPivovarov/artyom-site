@@ -13,12 +13,14 @@
     "format": "prettier --write --ignore-path .gitignore \"**/*.{js,vue,json,md}\""
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.7",
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/i18n": "8.0.0-rc.5",
     "@nuxtjs/stylelint-module": "^5.1.0",
     "@nuxtjs/tailwindcss": "^6.9.4",
+    "element-plus": "^2.4.4",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
