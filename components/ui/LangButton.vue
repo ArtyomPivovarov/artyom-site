@@ -1,16 +1,20 @@
 <script setup lang="ts">
 const { locale, localeCodes, setLocale } = useI18n()
+
+const nextLocale = computed(
+  () =>
+    localeCodes.value[localeCodes.value.indexOf(locale.value) + 1] ||
+    localeCodes.value[0]
+)
 </script>
 
 <template>
   <PrimeButton
-    :label="locale"
+    :label="nextLocale"
     outlined
     class="lang-button"
     aria-label="Change language"
-    @click="
-      setLocale(localeCodes[localeCodes.indexOf(locale) + 1] || localeCodes[0])
-    "
+    @click="setLocale(nextLocale)"
   />
 </template>
 
