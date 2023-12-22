@@ -43,7 +43,7 @@ const tags = [
 
         <p
           class="description"
-          v-html="$t(`I\'m a full-stack web developer`)"
+          v-html="$t(`Fullstack web developer`)"
         ></p>
       </div>
 
@@ -54,6 +54,7 @@ const tags = [
           round
           :color="tag.color"
           class="button"
+          plain
           @click="$router.push(`#${tag.slug}`)"
         >
           {{ tag.label }}
@@ -134,9 +135,11 @@ const tags = [
   gap: 1rem;
 
   .button {
+    border-width: 2px;
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--white-color);
+    background-color: transparent;
   }
 }
 
@@ -162,16 +165,15 @@ const tags = [
     align-items: center;
     justify-content: center;
     margin-top: 1.5rem;
-    background-color: var(--white-color);
-    border-radius: 4rem;
+    padding: 1rem;
+    border: 3px solid var(--white-color);
+    border-radius: 5rem;
     aspect-ratio: 1;
-    width: 7.3rem;
-    color: var(--dark-color);
     font-weight: 700;
     font-size: 1.2rem;
 
     .title {
-      font-size: 3rem;
+      font-size: 4rem;
       line-height: 1;
       font-weight: 700;
       color: var(--primary-color);
