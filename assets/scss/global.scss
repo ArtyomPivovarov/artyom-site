@@ -2,3 +2,11 @@
   background: var(--accent-color);
   color: var(--white-color);
 }
+
+html,
+body {
+  @media (max-width: 768px) {
+    font-size: 14px;
+
+  }
+}

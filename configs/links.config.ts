@@ -13,5 +13,10 @@ export const socialLinks = {
     name: 'Email',
     href: 'mailto:pivovarov.artyom1@gmail.com',
     icon: 'envelope'
+  },
+  telegram: {
+    name: 'Telegram',
+    href: 'https://t.me/ArtyomPivovarov',
+    icon: 'telegram'
   }
 }

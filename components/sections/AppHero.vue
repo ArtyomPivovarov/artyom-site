@@ -43,7 +43,7 @@ const tags = [
 
         <p
           class="description"
-          v-html="$t(`Fullstack web developer`)"
+          v-html="$t(`Fullstack web-developer`)"
         ></p>
       </div>
 
@@ -55,7 +55,6 @@ const tags = [
           :color="tag.color"
           class="button"
           plain
-          @click="$router.push(`#${tag.slug}`)"
         >
           {{ tag.label }}
         </ElButton>
@@ -98,7 +97,8 @@ const tags = [
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100dvh;
+  padding: 5rem 1rem 4rem;
   background: var(--dark-color);
   color: white;
 }
@@ -118,6 +118,7 @@ const tags = [
 
 .text-content {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .title {
@@ -127,6 +128,8 @@ const tags = [
 
 .skills {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 
   .button {
@@ -135,19 +138,22 @@ const tags = [
     font-weight: 700;
     color: var(--white-color);
     background-color: transparent;
+    cursor: default;
   }
 }
 
 .links {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .work-experience {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 
   .title {
     font-size: 1.5rem;

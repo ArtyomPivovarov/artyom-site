@@ -1,59 +1,60 @@
 <script setup lang="ts">
 import IconLink from '~/components/ui/IconLink.vue'
 import LangSelect from '~/components/ui/LangButton.vue'
-import UILink from '~/components/ui/UILink.vue'
+// import UILink from '~/components/ui/UILink.vue'
 import { socialLinks } from '~/configs/links.config'
 
-const route = useRoute()
-const links = [
-  {
-    href: '#work-experience',
-    label: 'Work experience'
-  },
-  {
-    href: '#projects',
-    label: 'Projects'
-  },
-  {
-    href: '#about',
-    label: 'About me'
-  },
-  {
-    href: '#contacts',
-    label: 'Contacts'
-  }
-]
+// const route = useRoute()
+// const links = [
+//   {
+//     href: '#work-experience',
+//     label: 'Work experience'
+//   },
+//   {
+//     href: '#projects',
+//     label: 'Projects'
+//   },
+//   {
+//     href: '#about',
+//     label: 'About me'
+//   },
+//   {
+//     href: '#contacts',
+//     label: 'Contacts'
+//   }
+// ]
 </script>
 
 <template>
   <header>
-    <a
-      class="logo"
-      href="#"
-    >
-      <PrimeAvatar
-        size="large"
-        shape="circle"
-        class="avatar"
-        icon="pi pi-user"
-      />
+    <div />
+    <!--    <a-->
+    <!--      class="logo"-->
+    <!--      href="#"-->
+    <!--    >-->
+    <!--      <PrimeAvatar-->
+    <!--        size="large"-->
+    <!--        shape="circle"-->
+    <!--        class="avatar"-->
+    <!--        icon="pi pi-user"-->
+    <!--      />-->
 
-      <span>{{ $t('Artyom Pivovarov') }}</span>
-    </a>
-    <nav class="menu">
-      <ul>
-        <li
-          v-for="link in links"
-          :key="link.href"
-        >
-          <UILink
-            :to="link.href"
-            :current="`#${route.hash}` === link.href"
-            >{{ $t(link.label) }}</UILink
-          >
-        </li>
-      </ul>
-    </nav>
+    <!--      <span class="font-bold">pivovarov.it</span>-->
+    <!--    </a>-->
+    <!--    <nav class="menu">-->
+    <!--      <ul>-->
+    <!--        <li-->
+    <!--          v-for="link in links"-->
+    <!--          :key="link.href"-->
+    <!--        >-->
+    <!--          <UILink-->
+    <!--            :to="link.href"-->
+    <!--            :current="`#${route.hash}` === link.href"-->
+    <!--            >{{ $t(link.label) }}</UILink-->
+    <!--          >-->
+    <!--        </li>-->
+    <!--      </ul>-->
+    <!--    </nav>-->
 
     <nav class="icon-links">
       <IconLink
@@ -64,9 +65,9 @@ const links = [
         :icon="`pi pi-${link.icon}`"
         :aria-label="link.name"
       />
-
-      <LangSelect class="lang-select" />
     </nav>
+
+    <LangSelect class="lang-select" />
   </header>
 </template>
 
@@ -74,7 +75,7 @@ const links = [
 header {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
@@ -112,6 +113,8 @@ header {
 }
 
 .lang-select {
+  position: absolute;
+  right: 1rem;
   margin-left: 0.4rem;
 }
 </style>
