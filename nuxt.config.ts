@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   modules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
@@ -9,32 +10,38 @@ export default defineNuxtConfig({
     'nuxt-primevue',
     '@element-plus/nuxt'
   ],
+
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/scss/mixins.scss";'
+          // additionalData: '@use "@/assets/scss/mixins.scss";'
         }
       }
     }
   },
+
   typescript: {
     typeCheck: true,
     strict: true
   },
+
   css: [
     'primevue/resources/themes/viva-dark/theme.css',
     'primeicons/primeicons.css',
     '@/assets/scss/main.scss'
   ],
+
   router: {
     options: {
       scrollBehaviorType: 'smooth'
     }
   },
+
   pinia: {
     storesDirs: ['./stores/**']
   },
+
   primevue: {
     components: {
       prefix: 'Prime'
@@ -43,6 +50,7 @@ export default defineNuxtConfig({
       ripple: true
     }
   },
+
   i18n: {
     lazy: true,
     langDir: 'locales',
@@ -66,5 +74,7 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root' // recommended
     }
-  }
+  },
+
+  compatibilityDate: '2025-01-31'
 })
